@@ -4,6 +4,12 @@
   font-family: LeagueSpartan, sans-serif;
 }
 
+@font-face {
+  font-family: 'DM Sans';
+  src: url('./fonts/DMSans-VariableFont_opsz,wght.ttf') format('truetype');
+  font-family: DM Sans, sans-serif;
+}
+
 :root {
   --color-base: #D9C9B9;
   --color-primary: #27210D;
@@ -13,7 +19,8 @@
   --color-text: #1E190A;
   --color-link: #031A6B;
 
-  --font: 'LeagueSpartan', sans-serif;
+  --font-headers: 'LeagueSpartan', sans-serif;
+  --font-paras: 'DM Sans', sans-serif;
 }
 
 header {
@@ -30,7 +37,6 @@ header {
     z-index: 1001;
 
     span {
-      background-color: var(--color-secondary);
       border-radius: 2px;
       display: block;
       height: 3px;
@@ -69,13 +75,14 @@ nav {
 
       a {
         color: var(--color-base);
+        font-family: var(--font-paras);
         text-decoration: none;
       }
     }
 
     li:first-child {
       color: var(--color-base);
-      font-family: var(--font);
+      font-family: var(--font-headers);
       font-weight: bold;
       font-size: 1.5rem;
       margin-top: 3rem;
@@ -89,13 +96,17 @@ nav {
   z-index: 1000;
 }
 
+.nav-toggle-label span {
+  background-color: var(--color-secondary);
+}
+
 /* Show nav when checkbox is checked */
 .nav-toggle:checked ~ nav {
   left: 0;
 }
 
 .nav-toggle:checked ~ .nav-toggle-label span:nth-child(1) {
-  color: var(--color-base);
+  background-color: var(--color-base);
   transform: rotate(45deg);
   top: -2px; /* Fix */
 }
@@ -105,6 +116,6 @@ nav {
 }
 
 .nav-toggle:checked ~ .nav-toggle-label span:nth-child(3) {
-  color: var(--color-base);
+  background-color: var(--color-base);
   transform: rotate(-45deg);
 }
