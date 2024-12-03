@@ -123,20 +123,20 @@ nav {
   border-radius: 50%;
 }
 
-.nav-toggle:checked ~ nav {
+.nav-toggle:checked~nav {
   background-color: var(--color-secondary);
   left: 0;
 }
 
-.nav-toggle:checked ~ .nav-toggle-label span:nth-child(1) {
-  background-color: var(--color-base); 
-}
-
-.nav-toggle:checked ~ .nav-toggle-label span:nth-child(2) {
+.nav-toggle:checked~.nav-toggle-label span:nth-child(1) {
   background-color: var(--color-base);
 }
 
-.nav-toggle:checked ~ .nav-toggle-label span:nth-child(3) {
+.nav-toggle:checked~.nav-toggle-label span:nth-child(2) {
+  background-color: var(--color-base);
+}
+
+.nav-toggle:checked~.nav-toggle-label span:nth-child(3) {
   background-color: var(--color-base);
 }
 
@@ -184,7 +184,8 @@ img {
   font-family: var(--font-paras);
   font-size: var(--font-24);
   font-style: italic;
-  font-weight: thin; /* Fix */
+  font-weight: thin;
+  /* Fix */
 
   margin-bottom: 5rem;
   margin-top: 3rem;
@@ -202,6 +203,8 @@ img {
   font-family: var(--font-headers);
   font-size: var(--font-75);
   text-transform: uppercase;
+  margin-bottom: 0;
+  text-align: center;
 }
 
 .resume-subtitle {
@@ -237,9 +240,57 @@ img {
   }
 
   p.text-chunk {
+    margin: 1rem 0 3rem 0;
     line-height: 2rem;
     word-spacing: .2rem;
     text-align: justify;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+  }
+
+  i:first-child {
+    margin-top: 1rem;
+  }
+
+  i:last-child {
+    margin-bottom: 0;
+  }
+
+  .contact-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-size: var(--font-24);
+    font-family: var(--font-paras);
+    text-align: left;
+    cursor: pointer;
+    color: var(--color-base);
+    display: flex;
+    align-items: center;
+  }
+
+  .contact-btn a {
+    color: var(--font-base);
+    font-family: var(--font-paras);
+    text-decoration: none;
+    margin-left: 10px;
+    font-weight: bold;
+  }
+
+  .contact-btn i {
+    margin-right: 1rem;
+    font-size: var(--font-24);
   }
 
 }
@@ -257,7 +308,7 @@ img {
 
 .page-buttons {
   list-style: none;
-  margin: 0;
+  margin: 5rem 0 0 0;
   padding: 0;
 }
 
@@ -267,7 +318,7 @@ img {
 
 .button-item {
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   padding: 0.5rem 1rem;
