@@ -331,6 +331,7 @@ img {
   text-align: left;
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.2s ease;
+  text-decoration: none;
 }
 
 .button-item {
