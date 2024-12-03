@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'LeagueSpartan';
-  src: url('./fonts/LeagueSpartan-VariableFont_wght.ttf/RobotoSlap.ttf') format('truetype');
+  src: url('./fonts/LeagueSpartan-VariableFont_wght.ttf') format('truetype');
   font-family: LeagueSpartan, sans-serif;
 }
 
@@ -18,14 +18,28 @@
   --color-title: #4A588A;
   --color-text: #1E190A;
   --color-link: #031A6B;
+  --color-white: #E8E8E8;
 
   --font-headers: 'LeagueSpartan', sans-serif;
   --font-paras: 'DM Sans', sans-serif;
+
+  --font-30: 1.875rem;
+  --font-40: 2.5rem;
+  --font-24: 1.5rem;
+  --font-20: 1.25rem;
+  --font-75: 4.6875rem;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+/************ Header ************/
+/* Hamburger Menu */
 header {
   padding: 1rem;
   position: relative;
+
 
   label {
     cursor: pointer;
@@ -96,17 +110,19 @@ nav {
   z-index: 1000;
 }
 
+
 .nav-toggle-label span {
   background-color: var(--color-secondary);
 }
 
 /* Show nav when checkbox is checked */
 .nav-toggle:checked ~ nav {
+  background-color: var(--color-secondary);
   left: 0;
 }
 
 .nav-toggle:checked ~ .nav-toggle-label span:nth-child(1) {
-  background-color: var(--color-base);
+  background-color: var(--color-secondary);
   transform: rotate(45deg);
   top: -2px; /* Fix */
 }
@@ -116,6 +132,99 @@ nav {
 }
 
 .nav-toggle:checked ~ .nav-toggle-label span:nth-child(3) {
-  background-color: var(--color-base);
+  background-color: var(--color-secondary);
   transform: rotate(-45deg);
+}
+
+/* Icon */
+.logo {
+  color: var(--color-icon);
+  font-family: var(--font-headers);
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+/************ Content ************/
+
+body {
+  background-color: var(--color-base);
+}
+
+.home-title {
+  color: var(--color-title);
+  font-family: var(--font-headers);
+  font-size: 6.25rem;
+  text-transform: uppercase;
+}
+
+img {
+  height: auto;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.subtitle {
+  color: var(--color-text);
+
+  font-family: var(--font-paras);
+  font-size: var(--font-24);
+  font-style: italic;
+  font-weight: thin; /* Fix */
+
+  span {
+    color: var(--color-title);
+    font-size: var(--font-30);
+  }
+}
+
+.page-title {
+  color: var(--color-title);
+  font-family: var(--font-headers);
+  font-size: var(--font-75);
+  text-transform: uppercase;
+}
+
+.resume-subtitle {
+  color: var(--color-title);
+  font-family: var(--font-headers);
+  font-size: var(--font-30);
+}
+
+.text-block {
+  background-color: var(--color-secondary);
+  padding: 1rem;
+
+  margin: 0;
+}
+
+.text-block-curved {
+  background-color: var(--color-secondary);
+
+  margin: 0.25rem;
+  border-radius: 25px;
+  padding: 1rem;
+
+  .resume-subtitle-white {
+    color: var(--color-white);
+    font-family: var(--font-headers);
+    font-size: var(--font-30);
+  }
+
+  p {
+    color: var(--color-white);
+    font-family: var(--font-paras);
+    font-size: var(--font-24);
+  }
+}
+
+.resume-block {
+  padding: 1rem;
+  margin: 0;
+
+  p {
+    color: var(--color-text);
+    font-family: var(--font-paras);
+    font-size: var(--font-24);
+  }
 }
